@@ -35,7 +35,8 @@ createApp({
         },
       ],
       counter: 0,
-      isPlayerActive: true
+      isPlayerActive: true,
+      isForward: true
     }
   },
 
@@ -43,6 +44,12 @@ createApp({
     nextPrev(isNext){
 
       isNext ? this.counter++ : this.counter--;
+
+      if(this.isForward === true){
+        counter++;
+      }else{
+        counter--;
+      }
 
       if(this.counter === this.images.lenght){
         this.counter = 0
