@@ -51,6 +51,13 @@ createApp({
       }
 
     },
+    autoPlay(){
+      setInterval( ()=> this.nextPrev(true),2000 )
+    }
 
+  },
+
+  mounted(){
+    this.autoPlay()
   }
 }).mount('#app')
