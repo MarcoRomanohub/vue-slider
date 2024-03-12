@@ -34,8 +34,8 @@ createApp({
             description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
         },
       ],
-      counter: 0
-
+      counter: 0,
+      isPlayerActive: true
     }
   },
 
@@ -52,7 +52,12 @@ createApp({
 
     },
     autoPlay(){
-      setInterval( ()=> this.nextPrev(true),2000 )
+      setInterval( ()=> {
+        if(this.isPlayerActive){
+          this.nextPrev(true)
+        }
+      }, 2000 )
+      
     }
 
   },
