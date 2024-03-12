@@ -45,11 +45,7 @@ createApp({
 
       isNext ? this.counter++ : this.counter--;
 
-      if(this.isForward === true){
-        counter++;
-      }else{
-        counter--;
-      }
+      
 
       if(this.counter === this.images.lenght){
         this.counter = 0
@@ -60,8 +56,12 @@ createApp({
     },
     autoPlay(){
       setInterval( ()=> {
-        if(this.isPlayerActive){
+        if(this.isPlayerActive && this.isForward){
           this.nextPrev(true)
+        }else if(this.isForward === true){
+          this.nextPrev(true)
+        }else{
+          this.nextPrev(false)
         }
       }, 2000 )
       
