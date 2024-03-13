@@ -56,13 +56,14 @@ createApp({
     },
     autoPlay(){
       setInterval( ()=> {
-        if(this.isPlayerActive && this.isForward){
-          this.nextPrev(true)
-        }else if(this.isForward === true){
-          this.nextPrev(true)
-        }else{
-          this.nextPrev(false)
+        if(this.isPlayerActive){
+          this.nextPrev(this.isForward)
         }
+        // else if(this.isForward === true){
+        //   this.nextPrev(true)
+        // }else{
+        //   this.nextPrev(false)
+        // }
       }, 2000 )
       
     }
